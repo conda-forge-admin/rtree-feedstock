@@ -38,9 +38,14 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
-  - files:
+  - requirements:
+      run:
+        - pytest
+    files:
       source:
         - tests/
+    script:
+      - pytest tests/
 
 about:
   summary: R-Tree spatial index for Python GIS

@@ -23,7 +23,6 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - setuptools >=61
-    - wheel
     - pip
     - libspatialindex
   run:
@@ -41,11 +40,12 @@ tests:
   - requirements:
       run:
         - pytest
+        - numpy
     files:
       source:
         - tests/
     script:
-      - pytest tests/
+      - pytest tests/ -v
 
 about:
   summary: R-Tree spatial index for Python GIS
